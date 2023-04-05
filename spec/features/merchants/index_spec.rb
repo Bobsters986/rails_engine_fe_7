@@ -5,11 +5,11 @@ RSpec.describe 'Merchant Index Page' do
     visit '/merchants'
   end
 
-  it 'displays all merchant names' do
-    expect(page).to have_content("Schroeder-Jerde")
-    expect(page).to have_content("Klein, Rempel and Jones")
-    expect(page).to have_content("Willms and Sons")
-    expect(page).to have_content("Cummings-Thiel")
-    expect(page).to have_content("Williamson Group")
+  it 'displays all merchant names as links' do
+    expect(page).to have_link("Schroeder-Jerde")
+    expect(page).to have_link("Klein, Rempel and Jones")
+    expect(page).to have_link("Willms and Sons")
+    expect(page).to have_link("Cummings-Thiel")
+    expect(page).to have_link("Williamson Group")
   end
 end
