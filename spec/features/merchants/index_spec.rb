@@ -1,15 +1,17 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Merchant Index Page' do
+RSpec.describe "Merchant Index Page" do
   before do
-    visit '/merchants'
+    visit "/merchants"
   end
 
-  it 'displays all merchant names as links' do
-    expect(page).to have_link("Schroeder-Jerde")
-    expect(page).to have_link("Klein, Rempel and Jones")
-    expect(page).to have_link("Willms and Sons")
-    expect(page).to have_link("Cummings-Thiel")
-    expect(page).to have_link("Williamson Group")
+  it "displays all merchant names as links" do
+    within "#merchants" do
+      expect(page).to have_link("Schroeder-Jerde")
+      expect(page).to have_link("Klein, Rempel and Jones")
+      expect(page).to have_link("Willms and Sons")
+      expect(page).to have_link("Cummings-Thiel")
+      expect(page).to have_link("Williamson Group")
+    end
   end
 end
