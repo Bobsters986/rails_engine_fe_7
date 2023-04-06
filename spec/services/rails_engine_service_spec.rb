@@ -1,12 +1,9 @@
 require "rails_helper"
 
-describe MerchantService do
+describe RailsEngineService do
   describe "#all_merchants" do
-    # before do
-    # end
-
     it "returns all merchants" do
-      merchants = MerchantService.new.all_merchants
+      merchants = RailsEngineService.new.all_merchants
 
       expect(merchants[:data]).to be_an(Array)
 

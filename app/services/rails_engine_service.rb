@@ -1,9 +1,7 @@
-class MerchantService
+class RailsEngineService
 
   def conn
-    Faraday.new(url: "http://localhost:3000/api/v1/") # do |faraday|
-      #faraday.adapter Faraday.default_adapter
-    # end
+    Faraday.new(url: "http://localhost:3000/api/v1/")
   end
 
   def get_url(url)

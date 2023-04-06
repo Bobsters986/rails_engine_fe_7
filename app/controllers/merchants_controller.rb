@@ -1,5 +1,5 @@
 class MerchantsController < ApplicationController
   def index
-    @facade = MerchantFacade.new
+    @facade = RailsEngineFacade.new
   end
 end

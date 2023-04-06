@@ -1,7 +1,7 @@
-class MerchantFacade
+class RailsEngineFacade
 
   def all_merchants
-    service = MerchantService.new
+    service = RailsEngineService.new
     merchants = service.all_merchants
 
     merchants[:data].map do |merchant|
