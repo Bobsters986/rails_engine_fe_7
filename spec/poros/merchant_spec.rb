@@ -11,7 +11,7 @@ RSpec.describe Merchant do
     merchant = Merchant.new(merchant_info)
 
     expect(merchant).to be_a(Merchant)
-    expect(merchant.id).to eq(1)
+    expect(merchant.id).to eq('1')
     expect(merchant.name).to eq("Schroeder-Jerde")
   end
 end

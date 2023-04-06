@@ -14,7 +14,7 @@ RSpec.describe Item do
     item = Item.new(item_info)
 
     expect(item).to be_a(Item)
-    expect(item.id).to eq(1)
+    expect(item.id).to eq('1')
     expect(item.name).to eq("New Item")
     expect(item.description).to eq("Dang thats one cool item!")
     expect(item.unit_price).to eq(420.69)
