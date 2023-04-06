@@ -1,9 +1,7 @@
 <h1>Merchants</h1>
 
-<section id = "merchants">
-  <ul>
-    <% @facade.all_merchants.each do |merchant| %>
-        <li><%= link_to merchant.name %></li>
-    <% end %>
-  </ul>
-</section>
+<ul id="merchants">
+  <% @facade.all_merchants.each do |merchant| %>
+      <li><%= link_to merchant.name, "/merchants/#{merchant.id}" %></li>
+  <% end %>
+</ul>
