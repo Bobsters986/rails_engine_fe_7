@@ -12,6 +12,12 @@ class RailsEngineService
     parsed[:data]
   end
 
+  def all_items
+    response = conn.get("items")
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    parsed[:data]
+  end
+
   private
 
   def conn

@@ -20,4 +20,12 @@ class RailsEngineFacade
       Item.new(info)
     end
   end
+
+  def all_items
+    items_info = service.all_items
+
+    items_info.map do |info|
+      Item.new(info)
+    end
+  end
 end
