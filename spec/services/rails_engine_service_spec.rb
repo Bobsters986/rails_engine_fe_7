@@ -17,7 +17,7 @@ describe RailsEngineService do
 
   describe "#merchant_items" do
     it "returns all items for a merchant" do
-      merchant_items_response = service.merchant_items(1)
+      merchant_items_response = service.merchant_items('1')
 
       expect(merchant_items_response).to be_an(Array)
       expect(merchant_items_response.first.keys).to eq([:id, :type, :attributes])
