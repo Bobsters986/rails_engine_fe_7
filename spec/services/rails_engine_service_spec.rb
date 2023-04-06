@@ -1,9 +1,11 @@
 require "rails_helper"
 
 describe RailsEngineService do
+  let(:service) { RailsEngineService.new }
+
   describe "#all_merchants" do
     it "returns all merchants" do
-      merchants_response = RailsEngineService.new.all_merchants
+      merchants_response = service.all_merchants
 
       expect(merchants_response).to be_an(Array)
       expect(merchants_response.first.keys).to eq([:id, :type, :attributes])
@@ -15,7 +17,7 @@ describe RailsEngineService do
 
   describe "#merchant_items" do
     it "returns all items for a merchant" do
-      merchant_items_response = RailsEngineService.new.merchant_items(1)
+      merchant_items_response = service.merchant_items(1)
 
       expect(merchant_items_response).to be_an(Array)
       expect(merchant_items_response.first.keys).to eq([:id, :type, :attributes])
@@ -27,5 +29,4 @@ describe RailsEngineService do
       expect(merchant_items_response.first[:attributes][:merchant_id]).to eq(1)
     end
   end
-
 end
