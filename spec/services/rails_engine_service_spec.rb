@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe RailsEngineService do
-  let(:service) { RailsEngineService.new }
+  let(:service) { described_class.new }
 
   describe "#all_merchants" do
     it "returns all merchants" do
@@ -27,6 +27,21 @@ describe RailsEngineService do
       expect(merchant_items_response.first[:attributes][:description]).to eq("Sunt eum id eius magni consequuntur delectus veritatis. Quisquam laborum illo ut ab. Ducimus in est id voluptas autem.")
       expect(merchant_items_response.first[:attributes][:unit_price]).to eq(42.91)
       expect(merchant_items_response.first[:attributes][:merchant_id]).to eq(1)
+    end
+  end
+
+  describe "#all_items" do
+    it "returns all items" do
+      items_response = service.all_items
+
+      expect(items_response).to be_an(Array)
+      expect(items_response.first.keys).to eq([:id, :type, :attributes])
+      expect(items_response.first[:attributes]).to be_a(Hash)
+      expect(items_response.first[:attributes].keys).to eq([:name, :description, :unit_price, :merchant_id])
+      expect(items_response.first[:attributes][:name]).to eq("Item Nemo Facere")
+      expect(items_response.first[:attributes][:description]).to eq("Sunt eum id eius magni consequuntur delectus veritatis. Quisquam laborum illo ut ab. Ducimus in est id voluptas autem.")
+      expect(items_response.first[:attributes][:unit_price]).to eq(42.91)
+      expect(items_response.first[:attributes][:merchant_id]).to eq(1)
     end
   end
 end

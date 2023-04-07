@@ -1,7 +1,7 @@
 <h1>Merchants</h1>
 
 <ul id="merchants">
-  <% @facade.all_merchants.each do |merchant| %>
+  <% @merchants.each do |merchant| %>
       <li><%= link_to merchant.name, "/merchants/#{merchant.id}" %></li>
   <% end %>
 </ul>
